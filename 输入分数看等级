@@ -1,0 +1,23 @@
+//输成绩看等级 //
+/* 输入一个分数即可查看对应分数所在等级 */
+/* taocyber       2021.4.1     */
+
+#include<stdio.h>
+#include<windows.h>/*头文件  包含基本头文件 Windef.h 基本数据类型定义。Winnt.h 支持Unicode的类型定义。
+Winbase.h Kernel(内核)函数 Winuser.h 用户界面函数。Wingdi.h 图形设备接口函数。*/
+int main()//主函数  
+{
+    float grade;// 定义成绩变量。 单精度浮点型  4个字节  
+    printf("\ninput your grades\n");//打印 
+    scanf("%f",&grade);//读取变量地址 
+    if(grade>=90)//if语句  
+        printf("\n优\n");//定义并打印变量大于90的 级别 
+    else if((grade>=80)&&(grade<90))//前后两项（80<=变量<90）同时成立 
+        printf("\n良\n");//满足上述条件输出级别 
+    else if((grade>=60)&&(grade<80))
+        printf("\n中\n");//同上 
+    else
+        printf("\n差\n");//不满足大于或等于60输出差 
+    
+    return 0;//返回值 
+}
