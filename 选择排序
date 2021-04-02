@@ -1,0 +1,76 @@
+//选择排序//
+/*将一组数据用选择排序的方式排列·
+taocyber   2021.4.1    */
+
+
+
+#include "stdio.h"
+
+#include<iostream>//库 标准输入输出流 
+
+
+using namespace std; //调用命名空间std内定义的标识符 
+
+
+void SelectSort(int A[],int n) //函数定义 
+
+
+{
+
+	for(int i = 0;i < n;i++ )//循环体查找 
+
+	{
+
+		int max =i;//把i的值赋给max 
+
+		for(int j = i+1;j < n;j++) //查找最大元素所在位置
+
+		{
+
+			if (A[j] > A[max])//比较每个元素的大小 
+
+			max =j;//赋j值给max 
+
+		}
+
+		int temp = A[max]; //交换无序后列中首元素与最大元素的位置
+
+		A[max] = A[i];
+
+A[i] = temp;//完成一个循环后进行下一个循环 
+
+	}
+}
+
+int main() //主函数 
+
+{
+
+	int A[] = {1,4,26,33,19,6,12,14,45,26,34};//定义数组元素 
+
+	int n = 11;//定义元素个数 
+
+	std ::cout << "排序前的数组：" ;//标准输出流输出“排序前的数组” 
+
+	for (int i = 0 ;i < n ; i++)
+
+	{
+
+		std ::cout << A[i]<<" " ;//依次输出排序前数组 
+
+	}
+
+	SelectSort( A,n);//运行排序函数 
+
+	std ::cout << "排序后的数组：" ;//标准输出流输出 
+
+	for (int i = 0 ;i < n ; i++)
+
+	{
+
+		std ::cout << A[i]<<" " ;//依次输出排序后数组 
+
+	}
+
+}
+
