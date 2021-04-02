@@ -1,0 +1,21 @@
+//判断回文数// 
+/*输入一个五位数，判断其是否是回文数
+taocyber    2021.4.1  */ 
+
+#include<stdio.h>
+int main()
+{
+    long ge,shi,qian,wan,x; //定义5个长整型数据变量 
+    printf("\n输入五位整数:");//打印 
+    scanf("%ld",&x);//以十进制输出长整型数据x的地址 
+    wan=x/10000;//为wan赋X除以10000的整数值 
+    qian=x%10000/1000;//为qian赋X除以10000的余数再除以1000的整数值 
+    shi=x%100/10;//为shi赋上述语句执行后X剩余后三位数除以100的余数再除以10的整数值 
+    ge=x%10;//为ge赋上述语句执行后X剩余后一位数除以10的余数的整数值 
+    if(ge==wan&&shi==qian)//if语句 判定ge值等于wan值并且shi值等于qian值两项是否成立 后执行下述两语句其一 
+        printf("\n是回文数\n");//如果ge值等于wan值并且shi值等于qian值两项同时满足则打印 
+    else
+        printf("\n不是回文数\n");//如果ge值等于wan值和shi值等于qian值任意一项不满足则打印 
+    
+    return 0;
+}
