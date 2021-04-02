@@ -1,0 +1,23 @@
+//判断闰年//
+/*输入年份判断此年份是否是闰年
+taocyber    2021.4.1 */ 
+
+
+#include<stdio.h>
+#include<windows.h>
+int main()
+{
+    int year;//输入整型变量 
+    printf("\n input the year number:\n");//打印 
+    scanf("%d",&year);//读取year的地址 函数返回值为int类型 
+    if((year%4==0&&year%100!=0)||(year%400==0))/*判断能被4整除和不能被100整除的年份，或者能被400整除400的年份。
+&&  条件与运算符   运算符两边的值都为TRUE时 才返回TRUE，否则返回FALSE	 
+||  逻辑或运算符    1.两个布尔值中任何一个值为TRUE（或者两个都为TRUE），则返回值为TRUE。如果两个运算符都是FALSE，则返回值为FALSE。
+2.字符串连接符。PLSQL中用来连接两个字符串。如'abc'||'def'的运算结果是'abcdef'。
+3.面对if((a=2)||(b=1)) c=2的情况，由于a=2始终为真，所以程序不再计算b=1的情况。此时，这条语句中的a=2和c=2为有效，
+b依然是程序开始定义的值，a的值为true*/
+        printf("\n%d年是闰年\n",year);//打印 
+    else
+        printf("\n%d年不是闰年\n",year);//打印 
+    return 0;//返回值 
+}
