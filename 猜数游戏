@@ -1,0 +1,24 @@
+//猜数游戏// 
+/*猜一个介于1-10之间的数，根据用户猜测的数与标准的数进行对比，并给出提示 
+taocyber    2021.4.1*/
+
+#include<stdio.h>
+#include<windows.h>
+int main()
+{
+    int number=5,guess;// 输入整型变量  定义number的值为5 
+    printf("guess a number\n");//打印 
+    do    /*do...while 是直型循环，while是当型循环。 do-while 的循环语句保证会执行一次（表达式的真值在每次循环结束后检查）
+在while 循环中表达式真值在循环开始时检查，如果一开始就为 FALSE 则整个循环立即终止*/ 
+    {
+        printf("input the number that you guessed:");//打印 
+        scanf("%d",&guess);//读取输入变量guess的地址 
+        if(guess>number) //如果 guess的值大于number的值则执行下列语句 
+            printf("太大\n");//打印 并换行 
+        else if(guess<number)// 如果nunber的值大于 guess的值则执行下列语句 
+            printf("太小\n");//打印并换行 
+    }while(guess!=number);//检查表达式是否正确 
+    printf("congratulations!答案为%d\n",number);//打印 
+    system("pause");
+    return 0;//返回值 
+}
