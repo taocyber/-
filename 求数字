@@ -1,0 +1,23 @@
+//求数字// 
+/*求一个正整数，加上100后是一个完全平方数，加上168又是一个完全平方数
+taocyber          2021.4.1        */ 
+
+#include<stdio.h>
+#include<stdlib.h>/*标准头文件  定义了五种类型、一些宏和通用工具函数。 类型例如size_t、wchar_t、div_t、ldiv_t和lldiv_t；
+ 宏例如EXIT_FAILURE、EXIT_SUCCESS、RAND_MAX和MB_CUR_MAX等等； 
+ 常用的函数如malloc()、calloc()、realloc()、free()、system()、atoi()、atol()、rand()、srand()、exit()等等 */
+  
+#include<math.h>//头文件包含一些常用数学运算符 
+int main()
+{
+    long  i,x,y;//定义三个整型变量 
+    for(i=100;i<=1000;++i)//for循环  
+    {
+        x=sqrt(i+100);//等式 X等于右边开方函数 
+        y=sqrt(i+268);//同上 
+
+        if((x*x==i+100)&&(y*y==i+268))//if语句  判断 i值是否符合条件 
+            printf("%ld\t",i);//以十进制打印符合上述条件的i的长整型值并空格 
+    }
+    return 0;
+}
