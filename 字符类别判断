@@ -1,0 +1,30 @@
+//字符类别判断// 
+/*输入一个字符，即可判断这个字符的类型，数字、字母、其他字符*/
+/*taocyber      2021.4.1*/ 
+
+
+#include<stdio.h> // 头文件 
+#include<windows.h>
+int main() //主函数  程序执行起点 
+{
+    char c;//定义一个 字符型变量 
+    printf("\n input a character");//打印 
+    c=getchar();/*读取输入的值并存到C中   宏实现：#define getchar() getc(stdin)。
+	getchar有一个int型的返回值。当程序调用getchar时，程序就等着用户按键。
+	用户输入的字符被存放在键盘缓冲区中。直到用户按回车为止。当用户键入回车之后，getchar才开始从stdin流中每次读入一个字符。
+	getchar函数的返回值是用户输入的字符的ASCII码，若文件结尾则返回-1(EOF)，且将用户输入的字符回显到屏幕。
+	如用户在按回车之前输入了不止一个字符，其他字符会保留在键盘缓存区中，等待后续getchar调用读取。
+	也就是说，后续的getchar调用不会等待用户按键，而直接读取缓冲区中的字符，直到缓冲区中的字符读完后。 */ 
+   
+    if(c<32)//判断c的 ASCII码值是不是小于32，小于32为 控制字符 
+        printf("\nit's a character for controlling.\n");
+    else if(c>='0'&&c<='9')//字符在0-9之间为数字
+        printf("\nit's a number\n");
+    else if(c>='A'&&c<='Z')//字符在A-Z之间为 大写字母 
+        printf("\nit's an upper character\n");
+    else if("c>='a'&&c<='z'")//字符在a-z之间为 小写字母 
+        printf("\n it's a downing number\n");
+    else//如果输入的值都不是以上类型，则为其他字符 
+        printf("it's an another character\n");
+    return 0;
+}
