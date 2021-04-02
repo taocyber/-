@@ -1,0 +1,32 @@
+//查找重复数字//
+/*在一串数字中查找用户需要的数字，并返会重复的次数
+taocyber   2021.4.1    */
+
+
+#include<stdio.h>
+#include <iostream> //声明下面单字节cin   声明 面向单字节的，即cin、cout、cerr和clog；其面向宽字节的对应物，声明为wcin、wcout、wcerr和wclog。
+using namespace std;//调用命名空间std内定义的标识符
+int main()
+{
+  int myarray[10]={4,3,7,4,8,7,9,4,3,6};//定义一个数组 
+  printf("输入你想查询的数：");//打印 
+ int number; //定义一个数字 
+  cin>>number;//标准输入流 
+  int count=0;//定义变量 
+  for(int i=0;i<sizeof(myarray);i++)//i的字节内存小于数组myarray的字节内存 
+  {
+    if(number==myarray[i])//判断输入的数字和 数组元素 是否相等 
+    {
+      count++;//数字和数字相等变量count加1并返回循环  若不相等就直接返回循环 
+    }
+  }
+  if(count!=0)//上述循环结束后 判断count是否等于0 
+  {
+    printf("共出现了 %d 次",count);//等于0则打印输出 
+  }
+  else
+  {
+    printf("一次都没出现！"); //不等于0则打印 
+  }
+  return 0;
+}
